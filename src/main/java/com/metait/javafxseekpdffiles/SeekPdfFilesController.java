@@ -190,9 +190,13 @@ public class SeekPdfFilesController {
                     // if (desktop != null)
                     //   desktop.open(new File(item));
                     ProcessBuilder processBuilder = new ProcessBuilder();
+                    String strCmnFile = (item.contains(" ") ? "'" +item +"'" : item);
                     // -- Linux --
                     // Run a shell command
-                    processBuilder.command("bash", "-c", "open " + item);
+                    if (File.separatorChar == '/')
+                        processBuilder.command("bash", "-c", "open " + strCmnFile);
+                    else
+                        processBuilder.command("cmd", "/C", "explorer.exe " + strCmnFile);
 
                     Process process = processBuilder.start();
                     StringBuilder output = new StringBuilder();
