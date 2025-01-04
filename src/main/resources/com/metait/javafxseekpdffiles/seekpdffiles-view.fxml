@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="TOP_CENTER" maxWidth="1.7976931348623157E308" prefHeight="858.0" prefWidth="1075.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+    <padding>
+        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+    </padding>
+   <VBox prefHeight="281.0" prefWidth="1035.0" spacing="5.0" VBox.vgrow="ALWAYS">
+      <VBox.margin>
+         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+      </VBox.margin>
+      <children>
+         <HBox fillHeight="false" maxWidth="1.7976931348623157E308" prefHeight="0.0" prefWidth="1035.0" spacing="5.0">
+            <children>
+               <Button fx:id="buttonSelectBaseDir" mnemonicParsing="false" onAction="#buttonSelectBaseDirPressed" prefHeight="25.0" prefWidth="218.0" text="Open pdf  base directory" />
+               <TextField fx:id="textFieldDir" maxWidth="1.7976931348623157E308" prefHeight="25.0" prefWidth="853.0" HBox.hgrow="ALWAYS" />
+            </children>
+            <opaqueInsets>
+               <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+            </opaqueInsets>
+            <cursor>
+               <Cursor fx:constant="DEFAULT" />
+            </cursor>
+            <padding>
+               <Insets top="10.0" />
+            </padding>
+         </HBox>
+         <HBox prefHeight="38.0" prefWidth="1035.0" spacing="15.0">
+            <children>
+               <CheckBox fx:id="checkBoxPssWdPdfs" mnemonicParsing="false" onAction="#checkBoxPssWdPdfsPressed" selected="true" text="Seek pdf with password">
+                  <tooltip>
+                     <Tooltip text="Seek pdf which may have password" />
+                  </tooltip>
+               </CheckBox>
+               <CheckBox fx:id="checkBoxReallyPssWdPdfs" layoutX="10.0" layoutY="20.0" mnemonicParsing="false" onAction="#checkBoxPssWdPdfsPressed" prefHeight="18.0" prefWidth="259.0" selected="true" text="Seek pdf which has really password">
+                  <tooltip>
+                     <Tooltip text="Read curent pdf that password exists really" />
+                  </tooltip>
+               </CheckBox>
+               <CheckBox fx:id="checkBoxReadAllSubDirs" layoutX="10.0" layoutY="20.0" mnemonicParsing="false" text="Read all sub directories">
+                  <tooltip>
+                     <Tooltip text="Read also all sub directories" />
+                  </tooltip>
+               </CheckBox>
+               <CheckBox fx:id="checkBoxReadPermissions" layoutX="203.0" layoutY="20.0" mnemonicParsing="false" text="Read permissions on mouse click">
+                  <tooltip>
+                     <Tooltip text="When a pdf file has found in the list, read permissions on mouse click" />
+                  </tooltip>
+               </CheckBox>
+            </children>
+            <padding>
+               <Insets top="10.0" />
+            </padding>
+            <VBox.margin>
+               <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+            </VBox.margin>
+         </HBox>
+         <HBox fillHeight="false" prefHeight="28.0" prefWidth="1055.0" spacing="10.0">
+            <children>
+               <Button fx:id="buttonExec" mnemonicParsing="false" onAction="#buttonExecPressed" text="Execute" />
+               <Button fx:id="buttonCancel" mnemonicParsing="false" onAction="#cancelExectionPressed" text="Cancel execute" />
+               <Label prefHeight="26.0" prefWidth="175.0" text="Blue color: executing...">
+                  <padding>
+                     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                  </padding>
+               </Label>
+               <ProgressBar fx:id="processIndicatorExec" prefHeight="26.0" prefWidth="170.0" progress="0.0" />
+            </children>
+         </HBox>
+         <HBox prefHeight="235.0" prefWidth="1035.0">
+            <children>
+               <TabPane maxWidth="1.7976931348623157E308" prefHeight="56.0" prefWidth="1055.0" tabClosingPolicy="UNAVAILABLE" HBox.hgrow="ALWAYS">
+                 <tabs>
+                   <Tab text="Cheange selected pdf">
+                     <content>
+                       <AnchorPane maxWidth="1.7976931348623157E308" minHeight="0.0" minWidth="0.0" prefHeight="108.0" prefWidth="1055.0">
+                              <children>
+                                 <VBox spacing="5.0" AnchorPane.bottomAnchor="9.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <children>
+                                       <HBox maxWidth="1.7976931348623157E308" prefHeight="35.0" prefWidth="1055.0" spacing="5.0" VBox.vgrow="ALWAYS">
+                                          <children>
+                                             <Button fx:id="buttonSelectWriteDir" mnemonicParsing="false" onAction="#buttonSelectWriteDirPressed" prefHeight="25.0" prefWidth="218.0" text="Select write directory" />
+                                             <TextField fx:id="textFieldDir21" layoutX="223.0" layoutY="20.0" maxWidth="1.7976931348623157E308" prefHeight="25.0" prefWidth="853.0" HBox.hgrow="ALWAYS" />
+                                          </children>
+                                          <opaqueInsets>
+                                             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                          </opaqueInsets>
+                                          <cursor>
+                                             <Cursor fx:constant="DEFAULT" />
+                                          </cursor>
+                                          <padding>
+                                             <Insets top="10.0" />
+                                          </padding>
+                                       </HBox>
+                                       <HBox maxWidth="1.7976931348623157E308" prefHeight="35.0" prefWidth="1055.0" spacing="5.0" VBox.vgrow="ALWAYS">
+                                          <opaqueInsets>
+                                             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                          </opaqueInsets>
+                                          <cursor>
+                                             <Cursor fx:constant="DEFAULT" />
+                                          </cursor>
+                                          <padding>
+                                             <Insets top="10.0" />
+                                          </padding>
+                                          <children>
+                                             <Label prefHeight="16.0" prefWidth="197.0" text="Write pfd file name:">
+                                                <HBox.margin>
+                                                   <Insets bottom="10.0" left="10.0" right="10.0" />
+                                                </HBox.margin>
+                                             </Label>
+                                             <TextField fx:id="textFieldFileName" maxWidth="1.7976931348623157E308" prefHeight="25.0" prefWidth="853.0" HBox.hgrow="ALWAYS" />
+                                          </children>
+                                       </HBox>
+                                       <HBox maxWidth="1.7976931348623157E308" prefHeight="30.0" prefWidth="1055.0" spacing="10.0" VBox.vgrow="ALWAYS">
+                                          <children>
+                                             <RadioButton fx:id="radioBoxRemoveBMakrs" mnemonicParsing="false" onAction="#radioButtonPressed" text="Remove bookmarks">
+                                                <toggleGroup>
+                                                   <ToggleGroup fx:id="writeaction" />
+                                                </toggleGroup>
+                                             </RadioButton>
+                                             <RadioButton fx:id="radoBoxConvertWordDoc" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#radioButtonPressed" text="Convert pdf into Word .docx" toggleGroup="$writeaction" />
+                                             <RadioButton fx:id="radoBoxPassWords" mnemonicParsing="false" onAction="#radoBoxPassWordsPressed" text="Set owner and user passwords" toggleGroup="$writeaction" />
+                                             <Button fx:id="buttonWritePdf" mnemonicParsing="false" onAction="#buttonWritePdfPressed" text="Write into above pdf" />
+                                          </children>
+                                       </HBox>
+                                       <HBox fx:id="hBox1" layoutX="10.0" layoutY="50.0" maxWidth="1.7976931348623157E308" prefHeight="35.0" prefWidth="1055.0" spacing="5.0" VBox.vgrow="ALWAYS">
+                                          <opaqueInsets>
+                                             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                          </opaqueInsets>
+                                          <cursor>
+                                             <Cursor fx:constant="DEFAULT" />
+                                          </cursor>
+                                          <padding>
+                                             <Insets top="10.0" />
+                                          </padding>
+                                          <children>
+                                             <Label prefHeight="16.0" prefWidth="197.0" text="Owner password:">
+                                                <HBox.margin>
+                                                   <Insets bottom="10.0" left="10.0" right="10.0" />
+                                                </HBox.margin>
+                                             </Label>
+                                             <TextField fx:id="textFieldOwnerPwd" maxWidth="1.7976931348623157E308" prefHeight="25.0" prefWidth="853.0" HBox.hgrow="ALWAYS" />
+                                          </children>
+                                       </HBox>
+                                       <HBox fx:id="hBox2" layoutX="10.0" layoutY="126.0" maxWidth="1.7976931348623157E308" prefHeight="35.0" prefWidth="1055.0" spacing="5.0" VBox.vgrow="ALWAYS">
+                                          <opaqueInsets>
+                                             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                          </opaqueInsets>
+                                          <cursor>
+                                             <Cursor fx:constant="DEFAULT" />
+                                          </cursor>
+                                          <padding>
+                                             <Insets top="10.0" />
+                                          </padding>
+                                          <children>
+                                             <Label prefHeight="16.0" prefWidth="197.0" text="User password:">
+                                                <HBox.margin>
+                                                   <Insets bottom="10.0" left="10.0" right="10.0" />
+                                                </HBox.margin>
+                                             </Label>
+                                             <TextField fx:id="textFieldUserPwd" maxWidth="1.7976931348623157E308" prefHeight="25.0" prefWidth="853.0" HBox.hgrow="ALWAYS" />
+                                          </children>
+                                       </HBox>
+                                    </children>
+                                 </VBox>
+                              </children>
+                           </AnchorPane>
+                     </content>
+                   </Tab>
+                   <Tab text="Set/Read permissions of encrypted pdf">
+                     <content>
+                       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="140.0" prefWidth="1055.0">
+                              <children>
+                                 <VBox prefHeight="84.0" prefWidth="1067.0" AnchorPane.bottomAnchor="106.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-12.0" AnchorPane.topAnchor="0.0">
+                                    <children>
+                                       <HBox maxWidth="1.7976931348623157E308" prefHeight="35.0" prefWidth="1055.0" spacing="10.0">
+                                          <children>
+                                             <Label text="Selected pdf:" />
+                                             <TextField fx:id="textFieldSelected" layoutX="223.0" layoutY="20.0" maxWidth="1.7976931348623157E308" prefHeight="25.0" prefWidth="853.0" HBox.hgrow="ALWAYS" />
+                                          </children>
+                                          <opaqueInsets>
+                                             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                          </opaqueInsets>
+                                          <cursor>
+                                             <Cursor fx:constant="DEFAULT" />
+                                          </cursor>
+                                          <padding>
+                                             <Insets top="10.0" />
+                                          </padding>
+                                          <VBox.margin>
+                                             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                          </VBox.margin>
+                                       </HBox>
+                                       <HBox spacing="10.0">
+                                          <children>
+                                             <CheckBox fx:id="checkBoxPrint" mnemonicParsing="false" text="Can print">
+                                                <tooltip>
+                                                   <Tooltip text="Set if the user can print." />
+                                                </tooltip>
+                                             </CheckBox>
+                                             <CheckBox fx:id="checkBoxAssembleDocument" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" text="Assemble Document">
+                                                <tooltip>
+                                                   <Tooltip text="Set if the user can insert/rotate/delete pages" />
+                                                </tooltip>
+                                             </CheckBox>
+                                             <CheckBox fx:id="checkBoxAllowExtraction" layoutX="103.0" layoutY="10.0" mnemonicParsing="false" text="Assemble Document">
+                                                <tooltip>
+                                                   <Tooltip text="Set if the user can extract content from the document." />
+                                                </tooltip>
+                                             </CheckBox>
+                                             <CheckBox fx:id="checkBoxCanExtractForAccessibility" layoutX="271.0" layoutY="10.0" mnemonicParsing="false" text="Can Extract For Accessibility">
+                                                <tooltip>
+                                                   <Tooltip text="Set if the user can extract content from the document for accessibility purposes." />
+                                                </tooltip>
+                                             </CheckBox>
+                                             <CheckBox fx:id="checkBoxAllowFillingInForm" layoutX="448.0" layoutY="20.0" mnemonicParsing="false" text="Allow Filling In Form">
+                                                <tooltip>
+                                                   <Tooltip text="Set if the user can fill in interactive form fields (including signature fields) even if canModifyAnnotations() returns false." />
+                                                </tooltip>
+                                             </CheckBox>
+                                             <CheckBox fx:id="checkBoxAllowModifications" layoutX="667.0" layoutY="20.0" mnemonicParsing="false" text="Allow Modifications">
+                                                <tooltip>
+                                                   <Tooltip text="Set if the user can modify the document." />
+                                                </tooltip>
+                                             </CheckBox>
+                                          </children>
+                                          <padding>
+                                             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                          </padding>
+                                       </HBox>
+                                       <HBox layoutX="10.0" layoutY="10.0" spacing="10.0">
+                                          <children>
+                                             <CheckBox fx:id="checkBoxAllowAnnotationModification" mnemonicParsing="false" prefHeight="18.0" prefWidth="233.0" text="Allow Annotation Modification">
+                                                <tooltip>
+                                                   <Tooltip text="Set if the user can add or modify text annotations and fill in interactive forms fields and, if canModify() returns true, create or modify interactive form fields (including signature fields)." />
+                                                </tooltip>
+                                             </CheckBox>
+                                             <CheckBox fx:id="checkBoxCanPrintFaithful" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="155.0" text="Can Print Faithful">
+                                                <tooltip>
+                                                   <Tooltip text="Set if the user can print the document in a faithful format or in a degraded format (if print is enabled)." />
+                                                </tooltip>
+                                             </CheckBox>
+                                             <CheckBox fx:id="checkBoxAllowExtraction1" layoutX="103.0" layoutY="10.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="150.0" text="Allow Extraction">
+                                                <tooltip>
+                                                   <Tooltip text="Set if the user can extract content from the document." />
+                                                </tooltip>
+                                             </CheckBox>
+                                          </children>
+                                          <padding>
+                                             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                          </padding>
+                                       </HBox>
+                                    </children>
+                                 </VBox>
+                              </children>
+                           </AnchorPane>
+                     </content>
+                   </Tab>
+                 </tabs>
+               </TabPane>
+            </children>
+         </HBox>
+      </children>
+      <padding>
+         <Insets bottom="10.0" left="10.0" right="10.0" top="5.0" />
+      </padding>
+   </VBox>
+   <HBox fillHeight="false" maxWidth="1.7976931348623157E308" prefHeight="0.0" prefWidth="1055.0" spacing="5.0" VBox.vgrow="ALWAYS">
+      <children>
+         <Label prefHeight="16.0" prefWidth="1046.0" text="Finded pdf files: (1 click: into clipboard, 2 clicks: open pdf, selected pdf +command button...)" />
+         <Label fx:id="labelExec" layoutX="10.0" layoutY="20.0" maxWidth="1.7976931348623157E308" prefHeight="16.0" prefWidth="833.0" HBox.hgrow="ALWAYS" />
+      </children>
+      <padding>
+         <Insets top="10.0" />
+      </padding>
+      <VBox.margin>
+         <Insets />
+      </VBox.margin>
+   </HBox>
+   <ListView fx:id="listPdfs" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="476.0" prefWidth="1055.0" VBox.vgrow="ALWAYS" />
+
+    <Label fx:id="labelMsg" alignment="BOTTOM_CENTER" prefHeight="19.0" prefWidth="1043.0" />
+</VBox>

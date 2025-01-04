@@ -1,2 +1,2 @@
 # javafxSeekPdfFiles
-JavaFx Search Pdf (password) files, or set passwords and rigths of an pdf file
+JavaFx application for Search Pdf (password) files, or set passwords and rigths for an pdf copy file. It working with java 11.
